@@ -1,0 +1,143 @@
+@keyframes next{
+    20%{
+        filter: opacity(1);
+        transform: translate(-125%, -50%) scale(95%);
+    }
+    30%{
+        filter: opacity(1);
+        transform: translate(-150%, -50%) scale(85%);
+    }
+    40%{
+        filter: opacity(1);
+        transform: translate(-150%, -50%) scale(75%);
+    }
+    50%{
+        transform: translate(-125%, -50%) scale(65%);
+        filter: opacity(1); 
+    }
+    60%{
+        transform: translate(-100%, -50%) scale(55%);
+        filter: opacity(1); 
+    }
+    70%{
+        transform: translate(-75%, -50%) scale(45%);
+        filter: opacity(1); 
+        z-index: -10;
+    }
+    100%{
+        filter: opacity(0);
+        z-index: -10;
+       
+    }
+}
+@keyframes prev{
+    0%{
+        z-index: -10;
+        filter: opacity(1);
+        transform: translate(-50%, -50%) scale(45%);
+    }
+    20%{
+        z-index: -10;
+        filter: opacity(1);
+        transform: translate(25%, -50%) scale(45%);
+    }
+    30%{
+        z-index: -10;
+        filter: opacity(1);
+        transform: translate(50%, -50%) scale(55%);
+    }
+    40%{
+        z-index: 1;
+        filter: opacity(1);
+        transform: translate(50%, -50%) scale(65%);
+    }
+    50%{
+        z-index: 1;
+        transform: translate(25%, -50%) scale(75%);
+        filter: opacity(1); 
+    }
+    60%{
+        z-index: 1;
+        transform: translate(-0%, -50%) scale(85%);
+        filter: opacity(1); 
+    }
+    70%{
+        transform: translate(-25%, -50%) scale(95%);
+        filter: opacity(1); 
+        z-index: 1;
+    }
+    100%{
+        transform: translate(-50%, -50%) scale(100%);
+        filter: opacity(1);
+        z-index: 1;
+       
+    }
+}
+
+.carousel{
+    margin: 20px;
+    height: 600px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.carousel-imgs{
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    
+    
+}
+.carouselImg{
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    z-index: -1;
+}
+.left-arrow{
+    padding-top: 200px;
+    padding-bottom: 200px;
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    border: none;
+    transform: translate(0, -50%);
+    background: rgba(199, 199, 199, 0.6);
+    z-index: 99;
+}
+.left-arrow:hover{
+    background: rgba(199, 199, 199, 0.405);
+}
+.right-arrow{
+    padding-top: 200px;
+    padding-bottom: 200px;
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    border: none;
+    transform: translate(0, -50%);
+    background: rgba(199, 199, 199, 0.6);
+    z-index: 99;
+}
+.right-arrow:hover{
+    background: rgba(199, 199, 199, 0.405);
+}
+
+.next-img-animation{
+    animation: next .5s linear forwards;
+}
+.prev-img-animation{
+    animation: prev .5s linear forwards;
+}
+.activeZindex{
+    z-index: 90;
+}
+.nextZindex{
+    z-index: 50;
+}

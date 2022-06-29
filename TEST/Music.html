@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles2.0.css">
+    <link rel="stylesheet" href="css/music.css">
+    <title>Teszt2.0</title>
+
+</head>
+<!--, getAllSong(), selectCurrentSong()-->
+
+<body onload="startTime(), select0thSong()">
+    <div class="warn-container" id="warn">
+        <div class="warning-screen">
+            <button onclick="closeFunction()" class="btn close-btn"><img size="small" src="icons/close-icon.png"
+                    alt="X">
+            </button>
+            Figyelmeztetés!
+        </div>
+    </div>
+
+    <div class="ul-container" id="ul">
+        <div class="ul-screen">
+            <button onclick="closeFunction()" class="btn close-btn"><img size="small" src="icons/close-icon.png"
+                    alt="X">
+            </button>
+            File Succesfully Uploaded!
+        </div>
+    </div>
+
+    <div class="addSongContainer">
+        <div>
+            <div class="formContainer" id="addForm">
+                <button type="button" onclick="closeSongForm()" class="btn close-btn"><img size="small"
+                        src="icons/close-icon.png" alt="X">
+                </button>
+
+                <form action="upload.php" method="post" enctype="multipart/form-data">
+
+                    <label for="Előadó">Előadó</label>
+                    <p><input name="eaInput" type="text" id="eaI"></p>
+                    <label for="cím">Cím</label>
+                    <p><input type="text" name="titleInput" id="ttI"></p>
+
+                    <input type="file" name="fuResume" id="fuResume">
+                    <button value="Upload" onclick="addElement()" class="submit-btn" type="submit"><img id="checkBtn"
+                            src="icons/check_icon.png" alt="OK"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="fullPage">
+        <h1><b class="Title">Zenék</b></h1>
+        <div class="to-Top">
+            <button onclick="topFunction()" id="myBtn" title="Go to top">
+                <img src="icons/down-arrow-icon.png" alt="to-Top">
+            </button>
+        </div>
+        <table class="navbar navbar-nav" id="navbar">
+            <tr>
+                <th class="col-1">
+                    <a class="home" href="test2.0.html">
+                        <button class="btn home-btn btn-background-slide" type="button">
+                            <img src="icons/home-icon.png" alt="home">
+                        </button>
+                    </a>
+                    <a class="colors" href="colors.html">
+                        <button class="btn color-btn btn-spin" type="button">
+                            <img src="icons/palette-icon.png" alt="palette">
+                        </button>
+                    </a>
+                    <a class="imgs" href="Images.html">
+                        <button class="btn img-btn btn-pop-border" type="button">
+                            <img src="icons/gallery-icon.png" alt="gallery">
+                        </button>
+                    </a>
+                    <a class="info" href="Music.html">
+                        <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                    <h2><img src="icons/hangjegy-icon.png" alt="info"></h2>
+                                </div>
+                                <div class="flip-box-back">
+                                    <h2><img src="icons/hangjegy-icon.png" alt="info"></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </th>
+                <th class="col-2">
+                    <div class="time-span">
+                        <span class="timeDisplay">
+                            <h3>
+                                <div id="date"></div>
+                            </h3>
+                            <h3 id="clock-h2">
+                                <div id="time"></div>
+                            </h3>
+                        </span>
+                    </div>
+                </th>
+                <th class="col-3">
+                    <form class="d-flex">
+                        <input onfocus="this.value=''" name="searchBtn" class="form-control me-2" type="text"
+                            placeholder="Search" aria-label="Search">
+                        <button onclick="searchFunction()" id="schBtn" class="btn search-btn" type="button"><img
+                                src="icons/nagyito-icon.png" alt=""></button>
+                        <button onclick="warningFunction()" class="btn warning-screen-pop-up-btn" id="wBtn"
+                            type="button"><img src="icons/warning-icon.png" alt="Exclamation-mark"></button>
+                    </form>
+                </th>
+            </tr>
+        </table>
+
+        <div class="player-container">
+            <div class="music-container" id="music-container">
+                <audio title="Nox - Foroj Világ!" class="music" id="1">
+                    <source src="music/forogj.mp3" type="audio/ogg">
+                </audio>
+                <audio title="Nox - Százszor Ölelj Még" class="music" id="2">
+                    <source src="music/olelj.mp3" type="audio/ogg">
+                </audio>
+                <audio title="Nox - Tűztánc" class="music" id="3">
+                    <source src="music/tuztanc.mp3" type="audio/ogg">
+                </audio>
+                <audio title="Jazz+Az - Gin, Rum, Sör, Bor" class="music" id="4">
+                    <source src="music/ginrum.mp3" type="audio/ogg">
+                </audio>
+                <audio title="Jazz+Az - Kémhatás" class="music" id="5">
+                    <source src="music/kemhatas.mp3" type="audio/ogg">
+                </audio>
+                <audio title="Jazz+Az - Tóksó" class="music" id="6">
+                    <source src="music/tokso.mp3" type="audio/ogg">
+                </audio>
+                <audio title="Magna Cum Laude - Vidéki Sanzon" class="music" id="7">
+                    <source src="music/sanzon.mp3" type="audio/ogg">
+                </audio>
+                <audio title="Magna Cum Laude - Pálinka" class="music" id="8">
+                    <source src="music/palinka.mp3" type="audio/ogg">
+                </audio>
+                <audio title="Magna Cum Laude - Színez Újra!" class="music" id="9">
+                    <source src="music/szinezd.mp3" type="audio/ogg">
+                </audio>
+                <audio title="Jonas Brothers - What a Man Gotta Do" class="music" id="10">
+                    <source src="music/Whataman.mp3" type="audio/ogg">
+                </audio>
+                <audio title="Syn Cole - Feel Good" class="music" id="11">
+                    <source src="music/Feelgood.mp3" type="audio/ogg">
+                </audio>
+                <audio title="One Direction - Kiss You" class="music" id="12">
+                    <source src="music/kissyou.mp3" type="audio/ogg">
+                </audio>
+                <audio title="One Direction - What Makes You Beautiful" class="music" id="13">
+                    <source src="music/whatmakes.mp3" type="audio/ogg">
+                </audio>
+            </div>
+            <div class="music-player">
+                <div class="musics">
+                    <img id="sound-icon" src="icons/sound-icon.png" alt="sound">
+
+                    <div id="titles" class="titles">Artist - Title</div>
+                    <div id="songCounter">--/--</div>
+                    <div class="duration">
+                        <input class="durSlider" id="position" step="0.1" type="range" min="0" max="100" value="0">
+                        <span id="positionText"></span>
+                    </div>
+
+                </div>
+
+                <div class="media-menu">
+                    <div class="mediaButtons">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th id="autoPlay">
+                                        <button onclick="replayOff()" class="music-btn" id="autoBtnOff">
+                                            <img id="repeatOff" src="icons/repeat-icon.png" alt="repeat"
+                                                title="auto-play">
+                                        </button>
+                                        <button onclick="replayOn()" class="music-btn" id="autoBtnOn">
+                                            <img id="repeatOn" src="icons/repeat-on-icon.png" alt="repeat-on"
+                                                title="auto-play">
+                                        </button>
+
+                                    </th>
+                                    <th id="prev">
+                                        <button onclick="setPrev()" id="previousSong" class="music-btn prev-btn">
+                                            <img id="previousIcon" src="icons/previous-icon.png" alt="prev">
+                                        </button>
+                                    </th>
+                                    <th id="p-p">
+                                        <button id="playBtn" class="music-btn play-btn">
+                                            <img id="playIcon" src="icons/play-icon.png" alt="play">
+                                            <img id="pauseIcon" src="icons/pause-icon.png" alt="pause">
+                                        </button>
+                                    </th>
+
+                                    <th id="next">
+                                        <button onclick="setNext()" id="nextSong" class="music-btn next-btn">
+                                            <img src="icons/next-icon.png" alt="next">
+                                        </button>
+                                    </th>
+                                    <th id="list">
+                                        <button onclick="checkSongList()" class="music-btn list-btn">
+                                            <img src="icons/list-icon.png" alt="">
+                                        </button>
+                                    </th>
+
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="volumeBar">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="volumeBtn">
+                                        <button class="mediaBtn" id="vol2"><img src="icons/volume-2-icon.png"
+                                                alt="volume"></button>
+
+                                        <button class="mediaBtn" id="vol1"><img src="icons/volume-1-icon.png"
+                                                alt="volume"></button>
+
+                                        <button class="mediaBtn" id="vol3"><img src="icons/volume-3-icon.png"
+                                                alt="volume"></button>
+
+                                        <button class="mediaBtn" id="vol0"><img src="icons/volume-mute-icon.png"
+                                                alt="volume"></button>
+                                    </th>
+                                    <th class="volumeSlide">
+                                        <input class="durSlider" id="volume" type="range" min="0" max="100" value="50"
+                                            onchange="changeVolume()">
+                                        <span id="volumeText"></span>
+                                    </th>
+                                    <th id="addSong">
+                                        <button onclick="addSongForm()" class="music-btn addNewSongFormBtn"
+                                            type="button"><img src="icons/plus-icon.png" alt="add"></button>
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="songTitleContainer" id="songList">
+            <div class="allSongs" id="allSongsID">
+                <table>
+                    <thead class="songDataHead">
+                        <tr>
+                            <th class="songHeader">
+                                #
+                            </th>
+                            <th class="songHeader">
+                                Előadó
+                            </th>
+                            <th class="songHeader">
+                                Cím
+                            </th>
+                            <th class="songHeader">
+                                Hossz
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <script src="JavaScript/addNewSong.js"></script>
+        <script src="JavaScript/music2.0.js"></script>
+        <script src="JavaScript/warning.js"></script>
+        <script src="JavaScript/to-top-btn.js"></script>
+        <script src="JavaScript/date.js"></script>
+        <script src="JavaScript/search.js"></script>
+
+    </div>
+</body>
+
+</html>
