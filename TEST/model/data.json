@@ -1,0 +1,74 @@
+{
+    "musicProperties": [
+        {
+            "title": "Feel Good",
+            "artist": "Syn Cole",
+            "extension": ".mp3"
+        },
+        {
+            "title": "Forogj Világ",
+            "artist": "Nox",
+            "extension": ".mp3"
+        },
+        {
+            "title": "Gin Rum Sör Bor",
+            "artist": "Jazz + Az",
+            "extension": ".mp3"
+        },
+        {
+            "title": "Kémhatás",
+            "artist": "Jazz + Az",
+            "extension": ".mp3"
+        },
+        {
+            "title": "Kiss You",
+            "artist": "One Direction",
+            "extension": ".mp3"
+        },
+        {
+            "title": "Nights",
+            "artist": "Fun.",
+            "extension": ".mp3"
+        },
+        {
+            "title": "Százszor Ölelj Még",
+            "artist": "Nox",
+            "extension": ".mp3"
+        },
+        {
+            "title": "Pálinka Dal",
+            "artist": "Magna Cum Laude",
+            "extension": ".mp3"
+        },
+        {
+            "title": "Vidéki Sanzon",
+            "artist": "Magna Cum Laude",
+            "extension": ".mp3"
+        },
+        {
+            "title": "Színezd újra",
+            "artist": "Magna Cum Laude",
+            "extension": ".mp3"
+        },
+        {
+            "title": "Tóksó",
+            "artist": "Jazz + Az",
+            "extension": ".mp3"
+        },
+        {
+            "title": "Tűztánc",
+            "artist": "Nox",
+            "extension": ".mp3"
+        },
+        {
+            "title": "What a Man Gotta Do",
+            "artist": "Jonas Brothers",
+            "extension": ".mp3"
+        },
+        {
+            "title": "What Makes You Beautiful",
+            "artist": "One Direction",
+            "extension": ".mp3"
+        }
+    ]
+}
